@@ -1,0 +1,344 @@
+/* Integral Design Software — theme-inspired static styles */
+
+:root {
+  --text: #555555;
+  --text-dark: #333333;
+  --accent: #0b6baa;
+  --border: #e0e0e0;
+  --white: #ffffff;
+  --muted: #919191;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "PT Serif", Georgia, serif;
+  --content-width: 900px;
+  --page-width: 1100px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  color: var(--text);
+  background-color: var(--white);
+  background-image: url("assets/bg.png");
+  background-position: center center;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  word-wrap: break-word;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: var(--text-dark);
+  text-decoration: underline;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: var(--accent);
+  color: var(--white);
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Header / brand */
+
+.site-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 0;
+}
+
+.brand-logo {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.brand-text {
+  min-width: 0;
+}
+
+.site-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text-dark);
+}
+
+.site-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-title a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.site-description {
+  margin: 0.35rem 0 0;
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* Navigation */
+
+.main-nav {
+  border-top: 1px solid var(--border);
+  background: var(--white);
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.main-nav a {
+  display: block;
+  padding: 0.85rem 1.1rem;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.main-nav a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* Hero */
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 280px;
+  background-image: url("assets/hero-rice-fields.png");
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: inset 0 -2px 1px -1px rgba(0, 0, 0, 0.2);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  padding: 3.5rem 1.5rem;
+  max-width: 40rem;
+}
+
+.hero-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--white);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+}
+
+.hero-desc {
+  margin: 0.75rem 0 0;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--white);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Main content */
+
+main {
+  padding: 2.5rem 0 3.5rem;
+}
+
+.content-panel {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--border);
+  padding: 2rem 2.25rem;
+}
+
+.section {
+  padding: 1.5rem 0;
+  scroll-margin-top: 1rem;
+}
+
+.section + .section {
+  border-top: 1px solid var(--border);
+  margin-top: 1rem;
+  padding-top: 2rem;
+}
+
+.section h2 {
+  margin: 0 0 1rem;
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.section h3 {
+  margin: 1.75rem 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.section p {
+  margin: 0 0 1rem;
+}
+
+.section ul {
+  margin: 0 0 1rem;
+  padding-left: 1.35rem;
+}
+
+.section li {
+  margin-bottom: 0.45rem;
+}
+
+.product {
+  margin-top: 0.5rem;
+}
+
+.cta {
+  margin-top: 1.25rem;
+}
+
+.cta a {
+  font-weight: 700;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.contact-list li {
+  margin-bottom: 0.65rem;
+}
+
+.contact-list strong {
+  display: inline-block;
+  min-width: 4.5rem;
+  color: var(--text-dark);
+}
+
+.note {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* Footer */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--white);
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.site-footer p {
+  margin: 0.25rem 0;
+}
+
+/* Responsive */
+
+@media (max-width: 700px) {
+  .brand-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .site-title {
+    font-size: 1.55rem;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+  }
+
+  .main-nav a {
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero {
+    min-height: 220px;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .content-panel {
+    padding: 1.5rem 1.25rem;
+  }
+}
