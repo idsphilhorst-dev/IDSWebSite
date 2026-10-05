@@ -65,5 +65,5 @@ Update or remove the old WordPress hosting / DNS so traffic goes only to GitHub 
 
 ## Content notes
 
-- Contact uses phone and email links (no server-side form).
+- Contact uses email links only (no phone number and no server-side form).
 - Online Stripe checkout from the old WordPress site is not included; payments are handled via support contact.

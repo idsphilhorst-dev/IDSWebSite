@@ -162,6 +162,38 @@ a:hover {
   text-decoration: none;
 }
 
+.main-nav .has-submenu {
+  position: relative;
+}
+
+.main-nav .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 60;
+  min-width: 12.5rem;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background: var(--white);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.main-nav .has-submenu:hover > .submenu,
+.main-nav .has-submenu:focus-within > .submenu {
+  display: flex;
+}
+
+.main-nav .submenu a {
+  padding: 0.7rem 1rem;
+  white-space: nowrap;
+}
+
+.main-nav .submenu a:hover {
+  background: #f7f7f7;
+}
+
 /* Hero */
 
 .hero {
@@ -344,6 +376,24 @@ main {
     padding: 0.55rem 0.75rem;
     border-bottom: none;
     font-size: 0.875rem;
+  }
+
+  .main-nav .submenu {
+    display: flex;
+    position: static;
+    min-width: 0;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  .main-nav .submenu a {
+    padding: 0.55rem 0.75rem;
+    white-space: normal;
+  }
+
+  .main-nav .submenu a:hover {
+    background: transparent;
   }
 
   .section {
